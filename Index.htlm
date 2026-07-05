@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Awareness Tool</title>
+</head>
+<body>
+
+<h2>Phishing Awareness Simulation Tool</h2>
+
+<textarea id="email" rows="6" cols="50"
+placeholder="Paste email here"></textarea>
+
+<br><br>
+
+<button onclick="checkEmail()">Check Email</button>
+
+<h3 id="result"></h3>
+
+<script>
+function checkEmail() {
+    let email = document.getElementById("email").value.toLowerCase();
+
+    if (
+        email.includes("urgent") ||
+        email.includes("verify") ||
+        email.includes("click here") ||
+        email.includes("password")
+    ) {
+        document.getElementById("result").innerHTML =
+        "⚠ Warning: Possible Phishing Email";
+    } else {
+        document.getElementById("result").innerHTML =
+        "✅ Safe Email";
+    }
+}
+</script>
+
+</body>
+</html>
